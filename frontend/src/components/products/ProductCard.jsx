@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { ShoppingBagIcon } from '@heroicons/react/outline';
+import { ShoppingBagIcon } from '@heroicons/react/24/outline';
 import { addToCart } from '../../store/slices/cartSlice';
 import toast from 'react-hot-toast';
 

@@ -2,14 +2,17 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
-import { fetchFeaturedProducts, fetchNewArrivals, fetchBestsellers } from '../store/slices/productsSlice';
-import { fetchFeaturedCategories } from '../store/slices/categoriesSlice';
-import ProductCard from '../components/products/ProductCard';
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import {
+  fetchFeaturedProducts,
+  fetchNewArrivals,
+  fetchBestsellers,
+} from "../store/slices/productsSlice";
+import { fetchFeaturedCategories } from "../store/slices/categoriesSlice";
+import ProductCard from "../components/products/ProductCard";
 
 const Home = () => {
   const dispatch = useDispatch();

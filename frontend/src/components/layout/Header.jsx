@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { ShoppingBagIcon, UserIcon, MenuIcon, SearchIcon, XIcon } from '@heroicons/react/outline';
+import { ShoppingBagIcon, UserIcon, Bars3Icon as MenuIcon, MagnifyingGlassIcon as SearchIcon, XMarkIcon as XIcon } from '@heroicons/react/24/outline';
 import { logout } from '../../store/slices/authSlice';
 
 const Header = () => {

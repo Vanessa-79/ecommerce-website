@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCart, updateCartItem, removeCartItem, clearCart } from '../store/slices/cartSlice';
-import { XIcon, PlusIcon, MinusIcon } from '@heroicons/react/outline';
+import { XMarkIcon as XIcon, PlusIcon, MinusIcon } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
 
 const Cart = () => {

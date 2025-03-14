@@ -4,13 +4,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductDetails, clearProductDetails } from '../store/slices/productsSlice';
 import { addToCart } from '../store/slices/cartSlice';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Navigation, Thumbs } from 'swiper';
-import { StarIcon, ShieldCheckIcon, TruckIcon, RefreshIcon } from '@heroicons/react/solid';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { StarIcon, ShieldCheckIcon, TruckIcon, ArrowPathIcon as RefreshIcon } from '@heroicons/react/24/solid';
 import toast from 'react-hot-toast';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
+
+
+
 
 const ProductDetail = () => {
   const { slug } = useParams();

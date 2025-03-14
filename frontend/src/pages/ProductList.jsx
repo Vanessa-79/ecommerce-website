@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../store/slices/productsSlice';
 import { fetchCategoryDetails } from '../store/slices/categoriesSlice';
 import ProductCard from '../components/products/ProductCard';
-import { ChevronDownIcon, FilterIcon, ViewGridIcon, ViewListIcon, XIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon, FunnelIcon as FilterIcon, Squares2X2Icon as ViewGridIcon, ListBulletIcon as ViewListIcon, XMarkIcon as XIcon } from '@heroicons/react/24/outline';
 
 const ProductList = () => {
   const { category } = useParams();

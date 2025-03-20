@@ -52,14 +52,14 @@ export default function Contact() {
                 <Mail className="w-6 h-6 text-indigo-600 mt-1" />
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                  <p className="text-gray-600">support@dreamwear.com</p>
+                  <p className="text-gray-600">vanessa@dreamwear.com</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <Phone className="w-6 h-6 text-indigo-600 mt-1" />
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
+                  <p className="text-gray-600">+256 (785) 507-825</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -67,8 +67,8 @@ export default function Contact() {
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-gray-900">Address</h3>
                   <p className="text-gray-600">
-                    123 Fashion Street<br />
-                    New York, NY 10001
+                    Salaama<br />
+                    Kampala, Uganda
                   </p>
                 </div>
               </div>

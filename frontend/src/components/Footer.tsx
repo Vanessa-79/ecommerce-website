@@ -153,7 +153,7 @@ export default function Footer() {
               })}
             </div>
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} TEMU-like. All rights reserved.
+              © {new Date().getFullYear()} DreamWear. All rights reserved.
             </p>
           </div>
         </div>

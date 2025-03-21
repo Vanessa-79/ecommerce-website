@@ -109,7 +109,7 @@ const products: Product[] = [
     category: "Kids",
     rating: 4.9,
     reviews: 87,
-    image: "/assets/images/products/night2.jpg",
+    image: "/assets/images/products/night3.jpg",
     badge: "BESTSELLER",
     discount: "-22%",
     stockStatus: "In Stock",
@@ -136,7 +136,7 @@ const products: Product[] = [
     category: "Kids",
     rating: 4.9,
     reviews: 87,
-    image: "/assets/images/products/night2.jpg",
+    image: "/assets/images/products/night4.jpg",
     badge: "BESTSELLER",
     discount: "-22%",
     stockStatus: "In Stock",
@@ -163,7 +163,7 @@ const products: Product[] = [
     category: "Kids",
     rating: 4.9,
     reviews: 87,
-    image: "/assets/images/products/night2.jpg",
+    image: "/assets/images/products/night5.jpg",
     badge: "BESTSELLER",
     discount: "-22%",
     stockStatus: "In Stock",
@@ -190,7 +190,7 @@ const products: Product[] = [
     category: "Kids",
     rating: 4.9,
     reviews: 87,
-    image: "/assets/images/products/night2.jpg",
+    image: "/assets/images/products/night4.jpg",
     badge: "BESTSELLER",
     discount: "-22%",
     stockStatus: "In Stock",
@@ -468,7 +468,7 @@ const ProductList = () => {
             >
               <Filter className="h-5 w-5" />
             </button>
-            
+        
             {/* Logo placeholder */}
             <div className="font-bold text-xl text-orange-500">SleepStyle</div>
           </div>

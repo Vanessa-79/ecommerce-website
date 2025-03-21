@@ -6,12 +6,11 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
 import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import About from "./pages/About";
-import Categories from "./pages/Categories";
-import Deals from "./pages/Deals";
-import Contact  from "./pages/Contact";
+import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingProvider from "./components/LoadingProvider";
 
@@ -23,9 +22,9 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductList />} />
+        <Route path="/category/:category" element={<ProductList />} />
         <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/deals" element={<Deals />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />

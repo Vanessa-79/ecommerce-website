@@ -1,109 +1,230 @@
-import React, { useState } from 'react';
-import { Heart, ShoppingCart, Minus, Plus, Star } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Heart, ShoppingCart, Star, Truck, Shield, RotateCcw } from 'lucide-react';
+import { Product } from '../types';
+import { toast } from 'react-hot-toast';
+import ProductCard from '../components/ProductCard';
 
-const ProductDetail = () => {
+export default function ProductDetail() {
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+  const [product, setProduct] = useState<Product | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [selectedSize, setSelectedSize] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState('m');
+  const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
 
-  const sizes = [
-    { value: 'xs', label: 'XS' },
-    { value: 's', label: 'S' },
-    { value: 'm', label: 'M' },
-    { value: 'l', label: 'L' },
-    { value: 'xl', label: 'XL' }
-  ];
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setLoading(true);
+      try {
+        // TODO: Replace with actual API call
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        // Simulated data
+        const mockProduct: Product = {
+          id: 1,
+          name: "Silk Pajama Set",
+          price: 89.99,
+          image: "/assets/products/pajama-set.jpg",
+          category: "Women's Nightwear",
+          inStock: true,
+          description: "Luxurious silk pajama set for ultimate comfort. Made with 100% pure silk, this set includes a long-sleeve top and matching pants. Perfect for a comfortable night's sleep.",
+        };
+        setProduct(mockProduct);
 
+        // Fetch related products
+        const mockRelatedProducts: Product[] = [
+          // Add mock related products
+        ];
+        setRelatedProducts(mockRelatedProducts);
+      } catch (error) {
+        toast.error('Failed to load product details. Please try again later.');
+        navigate('/products');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchProduct();
+    }
+  }, [id, navigate]);
+
+  const handleAddToCart = () => {
+    if (!product) return;
+    if (!selectedSize) {
+      toast.error('Please select a size');
+      return;
+    }
+    toast.success(`${product.name} added to cart!`);
+    // TODO: Implement actual cart functionality
+  };
+
+  const handleAddToWishlist = () => {
+    if (!product) return;
+    toast.success(`${product.name} added to wishlist!`);
+    // TODO: Implement actual wishlist functionality
+  };
+
+  if (loading) {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="min-h-screen pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="aspect-square rounded-lg overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1573612664822-d7d347da7b80?auto=format&fit=crop&q=80"
-            alt="Silk Pajama Set"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        <div className="space-y-6">
-          <div>
-            <h1 className="text-3xl font-display font-bold text-secondary">Silk Pajama Set</h1>
-            <div className="flex items-center mt-2">
-              <div className="flex text-yellow-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
-              <span className="ml-2 text-sm text-gray-500">(24 reviews)</span>
+            <div className="bg-gray-100 rounded-lg h-96 animate-pulse" />
+            <div className="space-y-4">
+              <div className="h-8 bg-gray-100 rounded w-3/4 animate-pulse" />
+              <div className="h-6 bg-gray-100 rounded w-1/4 animate-pulse" />
+              <div className="h-24 bg-gray-100 rounded animate-pulse" />
             </div>
           </div>
+        </div>
+      </div>
+    );
+  }
 
-          <p className="text-2xl font-bold text-secondary">$89.99</p>
+  if (!product) {
+    return (
+      <div className="min-h-screen pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-2xl font-bold mb-4">Product not found</h1>
+          <button
+            onClick={() => navigate('/products')}
+            className="text-indigo-600 hover:text-indigo-500"
+          >
+            Return to products
+          </button>
+        </div>
+      </div>
+    );
+  }
 
-          <div>
-            <h3 className="text-sm font-medium text-gray-900">Description</h3>
-            <p className="mt-2 text-gray-600">
-              Luxurious silk pajama set designed for ultimate comfort. Features a classic collar,
-              button-up front, and elastic waistband. Made from 100% pure mulberry silk.
-            </p>
+  return (
+    <div className="min-h-screen pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        >
+          {/* Product Image */}
+          <div className="relative">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-auto rounded-lg"
+            />
+            <button
+              onClick={handleAddToWishlist}
+              className="absolute top-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
+            >
+              <Heart className="w-6 h-6 text-gray-600 hover:text-red-500 transition-colors" />
+            </button>
           </div>
 
+          {/* Product Info */}
           <div>
-            <h3 className="text-sm font-medium text-gray-900">Size</h3>
-            <div className="grid grid-cols-5 gap-2 mt-2">
-              {sizes.map(size => (
+            <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+            <p className="text-2xl font-semibold mb-6">${product.price.toFixed(2)}</p>
+            
+            <div className="flex items-center mb-6">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-5 h-5 text-yellow-400 fill-current"
+                />
+              ))}
+              <span className="ml-2 text-gray-600">(4.8/5)</span>
+            </div>
+
+            <p className="text-gray-600 mb-8">{product.description}</p>
+
+            {/* Size Selection */}
+            <div className="mb-6">
+              <h3 className="font-semibold mb-2">Select Size</h3>
+              <div className="flex gap-4">
+                {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
                 <button
-                  key={size.value}
-                  className={`py-2 text-sm font-medium rounded-md ${
-                    selectedSize === size.value
-                      ? 'bg-primary text-white'
-                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                    key={size}
+                    onClick={() => setSelectedSize(size)}
+                    className={`w-12 h-12 rounded-full border-2 flex items-center justify-center ${
+                      selectedSize === size
+                        ? 'border-black bg-black text-white'
+                        : 'border-gray-300 hover:border-black'
                   }`}
-                  onClick={() => setSelectedSize(size.value)}
                 >
-                  {size.label}
+                    {size}
                 </button>
               ))}
             </div>
           </div>
 
-          <div>
-            <h3 className="text-sm font-medium text-gray-900">Quantity</h3>
-            <div className="flex items-center mt-2">
+            {/* Quantity Selection */}
+            <div className="mb-8">
+              <h3 className="font-semibold mb-2">Quantity</h3>
+              <div className="flex items-center gap-4">
               <button
-                className="p-2 border rounded-l-md hover:bg-gray-100"
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-black"
               >
-                <Minus className="h-4 w-4" />
+                  -
               </button>
-              <input
-                type="number"
-                min="1"
-                value={quantity}
-                onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value)))}
-                className="w-16 text-center border-t border-b"
-              />
+                <span className="w-12 text-center">{quantity}</span>
               <button
-                className="p-2 border rounded-r-md hover:bg-gray-100"
                 onClick={() => setQuantity(quantity + 1)}
+                  className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-black"
               >
-                <Plus className="h-4 w-4" />
+                  +
               </button>
             </div>
           </div>
 
-          <div className="flex gap-4">
-            <button className="flex-1 bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg flex items-center justify-center gap-2 transition-colors">
-              <ShoppingCart className="h-5 w-5" />
+            {/* Add to Cart Button */}
+            <button
+              onClick={handleAddToCart}
+              className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition flex items-center justify-center gap-2 mb-8"
+            >
+              <ShoppingCart className="w-5 h-5" />
               Add to Cart
             </button>
-            <button className="p-3 border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors">
-              <Heart className="h-5 w-5" />
-            </button>
+
+            {/* Product Features */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex items-center gap-2">
+                <Truck className="w-5 h-5 text-gray-600" />
+                <span className="text-sm">Free Shipping</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="w-5 h-5 text-gray-600" />
+                <span className="text-sm">2 Year Warranty</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <RotateCcw className="w-5 h-5 text-gray-600" />
+                <span className="text-sm">30 Day Returns</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Related Products */}
+        {relatedProducts.length > 0 && (
+          <div className="mt-16">
+            <h2 className="text-2xl font-bold mb-8">You May Also Like</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {relatedProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onAddToCart={handleAddToCart}
+                  onAddToWishlist={handleAddToWishlist}
+                />
+              ))}
           </div>
         </div>
+        )}
       </div>
     </div>
   );
-};
-
-export default ProductDetail;
+}

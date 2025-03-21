@@ -1,165 +1,153 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Search, ShoppingCart, User, Heart } from 'lucide-react';
-
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Products', href: '/products' },
-  { name: 'Categories', href: '/categories' },
-  { name: 'Deals', href: '/deals' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
-];
+import { Menu, X, ShoppingCart, User, Heart, Search } from 'lucide-react';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery('');
+      setIsMenuOpen(false);
+    }
+  };
+
+  const menuItems = [
+    { name: "Home", href: '/' },
+    { name: "Products", href: '/products' },
+    { name: "Categories", href: '/categories', submenu: [
+      { name: "Women's Nightwear", href: '/category/womens-nightwear' },
+      { name: "Women's Gymwear", href: '/category/womens-gymwear' },
+      { name: "Children's Clothing", href: '/category/childrens-clothing' },
+    ]},
+    { name: 'Sale', href: '/category/sale' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+  ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-white/80 backdrop-blur-md'
-      }`}
-    >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-indigo-600 z-50 shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
-            <motion.h1
-              whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold text-indigo-600"
-            >
-              Dreamwear
-            </motion.h1>
+          <Link to="/" className="font-bold text-2xl text-white hover:text-purple-200 transition">
+            DreamWear
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
-            {navigation.map((item) => (
+          <div className="hidden md:flex items-center space-x-8">
+            {menuItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-white hover:text-purple-200 transition font-medium"
               >
                 {item.name}
               </Link>
             ))}
           </div>
 
-          {/* Search Bar */}
-          <div className="hidden md:flex flex-1 max-w-lg mx-8">
-            <div className="relative w-full">
+          {/* Search, Cart, and User Icons */}
+          <div className="hidden md:flex items-center space-x-6">
+            <form onSubmit={handleSearch} className="relative">
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search products..."
-                className="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-indigo-500"
+                className="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 bg-white/10 text-white placeholder-purple-200"
               />
-              <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-            </div>
+              <Search className="w-5 h-5 text-purple-200 absolute left-3 top-1/2 transform -translate-y-1/2" />
+            </form>
+            <Link to="/wishlist" className="text-white hover:text-purple-200 transition relative">
+              <Heart className="w-6 h-6" />
+              <span className="absolute -top-2 -right-2 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+            </Link>
+            <Link to="/cart" className="text-white hover:text-purple-200 transition relative">
+              <ShoppingCart className="w-6 h-6" />
+              <span className="absolute -top-2 -right-2 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+            </Link>
+            <Link to="/login" className="text-white hover:text-purple-200 transition">
+              <User className="w-6 h-6" />
+            </Link>
           </div>
 
-          {/* Desktop Icons */}
-          <div className="hidden md:flex items-center space-x-6">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-gray-600 hover:text-indigo-600"
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center space-x-4">
+            <Link to="/cart" className="text-white">
+              <ShoppingCart className="w-6 h-6" />
+            </Link>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white"
             >
-              <Heart className="h-6 w-6" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-gray-600 hover:text-indigo-600"
-            >
-              <User className="h-6 w-6" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="relative text-gray-600 hover:text-indigo-600"
-            >
-              <ShoppingCart className="h-6 w-6" />
-              <span className="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                0
-              </span>
-            </motion.button>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-indigo-600"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </motion.button>
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
           </div>
         </div>
-      </nav>
+      </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
-        {isOpen && (
+        {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t"
+            className="md:hidden bg-indigo-700"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50 rounded-md"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-            <div className="px-4 py-3 border-t border-gray-200">
-              <div className="flex items-center space-x-4">
+            <div className="px-4 py-2">
+              <form onSubmit={handleSearch} className="relative mb-4">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search products..."
+                  className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 bg-white/10 text-white placeholder-purple-200"
+                />
+                <Search className="w-5 h-5 text-purple-200 absolute left-3 top-1/2 transform -translate-y-1/2" />
+              </form>
+              <div className="space-y-4">
+                {menuItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block text-white hover:text-purple-200 transition"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
                 <Link
                   to="/wishlist"
-                  className="flex items-center text-gray-600 hover:text-indigo-600"
-                  onClick={() => setIsOpen(false)}
+                  className="flex items-center space-x-2 text-white hover:text-purple-200 transition"
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  <Heart className="h-6 w-6 mr-2" />
+                  <Heart className="w-5 h-5" />
                   <span>Wishlist</span>
                 </Link>
                 <Link
-                  to="/profile"
-                  className="flex items-center text-gray-600 hover:text-indigo-600"
-                  onClick={() => setIsOpen(false)}
+                  to="/login"
+                  className="flex items-center space-x-2 text-white hover:text-purple-200 transition"
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  <User className="h-6 w-6 mr-2" />
-                  <span>Profile</span>
-                </Link>
-                <Link
-                  to="/cart"
-                  className="flex items-center text-gray-600 hover:text-indigo-600"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <ShoppingCart className="h-6 w-6 mr-2" />
-                  <span>Cart (0)</span>
+                  <User className="w-5 h-5" />
+                  <span>Account</span>
                 </Link>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </nav>
   );
 }

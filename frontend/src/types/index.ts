@@ -9,6 +9,7 @@ export interface Product {
   id: number;
   name: string;
   price: number;
+  originalPrice?: number;
   image: string;
   description?: string;
   category?: string;
@@ -18,6 +19,18 @@ export interface Product {
   isFeatured?: boolean;
   isNew?: boolean;
   discount?: number;
+}
+
+export interface ProductCardProps {
+  product: Product;
+  onAddToCart: () => void;
+  onAddToWishlist: () => void;
+  index?: number;
+}
+
+export interface TestimonialCardProps {
+  testimonial: Testimonial;
+  index?: number;
 }
 
 export interface Testimonial {

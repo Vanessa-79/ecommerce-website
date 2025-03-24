@@ -7,55 +7,70 @@ const categories = [
   {
     id: 1,
     name: "Women's Nightwear",
-    image: "/assets/images/night5.jpg",
+    image: "../../src/assets/images/night5.jpg",
     itemCount: 42,
     description: "Luxurious and comfortable nightwear collection",
     featured: true,
-    subcategories: ["Pajama Sets", "Night Robes", "Nightgowns", "Sleep Accessories"]
+    subcategories: [
+      "Pajama Sets",
+      "Night Robes",
+      "Nightgowns",
+      "Sleep Accessories",
+    ],
   },
   {
     id: 2,
     name: "Women's Gymwear",
-    image: "/assets/images/night6.jpg",
+    image: "../../src/assets/images/night6.jpg",
     itemCount: 36,
     description: "High-performance activewear for your fitness journey",
     featured: true,
-    subcategories: ["Sports Bras", "Leggings", "Workout Tops", "Gym Accessories"]
+    subcategories: [
+      "Sports Bras",
+      "Leggings",
+      "Workout Tops",
+      "Gym Accessories",
+    ],
   },
   {
     id: 3,
     name: "Children's Clothing",
-    image: "/assets/images/13189.jpg",
+    image: "../../src/assets/images/13189.jpg",
     itemCount: 28,
     description: "Adorable and comfortable clothing for kids",
     featured: true,
-    subcategories: ["Pajamas", "Casual Wear", "School Uniforms", "Accessories"]
+    subcategories: ["Pajamas", "Casual Wear", "School Uniforms", "Accessories"],
   },
   {
     id: 4,
     name: "Sale Items",
-    image: "/assets/images/31427.jpg",
+    image: "../../src/assets/images/31427.jpg",
     itemCount: 64,
     description: "Great deals on selected items",
     featured: true,
-    subcategories: ["Clearance", "Season End Sale", "Bundle Deals", "Flash Sales"]
+    subcategories: [
+      "Clearance",
+      "Season End Sale",
+      "Bundle Deals",
+      "Flash Sales",
+    ],
   },
   {
     id: 5,
     name: "Accessories",
-    image: "/assets/images/night2.jpg",
+    image: "../../src/assets/images/night2.jpg",
     itemCount: 95,
     description: "Complete your look with our accessories",
-    subcategories: ["Jewelry", "Bags", "Scarves", "Hair Accessories"]
+    subcategories: ["Jewelry", "Bags", "Scarves", "Hair Accessories"],
   },
   {
     id: 6,
     name: "Beauty & Care",
-    image: "/assets/images/night3.jpg",
+    image: "../../src/assets/images/night3.jpg",
     itemCount: 73,
     description: "Premium beauty and self-care products",
-    subcategories: ["Skincare", "Haircare", "Bath & Body", "Aromatherapy"]
-  }
+    subcategories: ["Skincare", "Haircare", "Bath & Body", "Aromatherapy"],
+  },
 ];
 
 const containerVariants = {

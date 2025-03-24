@@ -26,10 +26,11 @@ export default function ProductDetail() {
           id: 1,
           name: "Silk Pajama Set",
           price: 89.99,
-          image: "/assets/products/pajama-set.jpg",
+          image: "../../src/assets/products/pajama-set.jpg",
           category: "Women's Nightwear",
           inStock: true,
-          description: "Luxurious silk pajama set for ultimate comfort. Made with 100% pure silk, this set includes a long-sleeve top and matching pants. Perfect for a comfortable night's sleep.",
+          description:
+            "Luxurious silk pajama set for ultimate comfort. Made with 100% pure silk, this set includes a long-sleeve top and matching pants. Perfect for a comfortable night's sleep.",
         };
         setProduct(mockProduct);
 

@@ -164,7 +164,7 @@ const products: Product[] = [
     rating: 4.9,
     reviews: 87,
     image: "/images/products/night5.jpg",
-    badge: "BESTSELLER",
+    badge: "BESTSELLERS",
     discount: "-22%",
     stockStatus: "In Stock",
     freeShipping: true,

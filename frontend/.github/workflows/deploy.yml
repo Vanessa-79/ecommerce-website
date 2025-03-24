@@ -24,12 +24,15 @@ jobs:
           cache: 'npm'
           
       - name: Install dependencies
+        working-directory: ./frontend
         run: npm ci
         
       - name: Run linting
+        working-directory: ./frontend
         run: npm run lint
         
       - name: Build project
+        working-directory: ./frontend
         run: npm run build
         
       - name: Deploy to Render

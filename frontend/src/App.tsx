@@ -15,7 +15,7 @@ import Deals from "./pages/Deals";
 import Categories from "./pages/Categories";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingProvider from "./components/LoadingProvider";
-import Lookbook from "./pages/lookbook";
+import Lookbook from "./pages/Lookbook";
 
 function AnimatedRoutes() {
   const location = useLocation();

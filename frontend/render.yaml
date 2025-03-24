@@ -1,13 +1,16 @@
 services:
-  - type: web
+  - type: static
     name: ecommerce-frontend
-    env: static
     buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
+    publishPath: dist
     pullRequestPreviewsEnabled: true
     envVars:
       - key: NODE_VERSION
         value: 18
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
     routes:
       - type: rewrite
         source: /*

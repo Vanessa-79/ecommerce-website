@@ -40,7 +40,15 @@ jobs:
       - name: Build project
         run: npm run build
         
+      - name: Prepare for Render deployment
+        run: |
+          cp package.json ../package.json
+          cp package-lock.json ../package-lock.json
+          mkdir -p ../dist
+          cp -r dist/* ../dist/
+        
       - name: Deploy to Render
+        working-directory: .
         env:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
           RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}

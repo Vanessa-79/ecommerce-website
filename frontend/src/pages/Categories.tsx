@@ -1,56 +1,83 @@
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { ChevronRight, Search, Filter, ArrowRight } from 'lucide-react';
 
 const categories = [
   {
     id: 1,
-    name: 'Women\'s Fashion',
-    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-    itemCount: 1250,
+    name: "Women's Nightwear",
+    image: "/assets/images/night5.jpg",
+    itemCount: 42,
+    description: "Luxurious and comfortable nightwear collection",
+    featured: true,
+    subcategories: ["Pajama Sets", "Night Robes", "Nightgowns", "Sleep Accessories"]
   },
   {
     id: 2,
-    name: 'Men\'s Fashion',
-    image: 'https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-    itemCount: 980,
+    name: "Women's Gymwear",
+    image: "/assets/images/night6.jpg",
+    itemCount: 36,
+    description: "High-performance activewear for your fitness journey",
+    featured: true,
+    subcategories: ["Sports Bras", "Leggings", "Workout Tops", "Gym Accessories"]
   },
   {
     id: 3,
-    name: 'Accessories',
-    image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-    itemCount: 650,
+    name: "Children's Clothing",
+    image: "/assets/images/13189.jpg",
+    itemCount: 28,
+    description: "Adorable and comfortable clothing for kids",
+    featured: true,
+    subcategories: ["Pajamas", "Casual Wear", "School Uniforms", "Accessories"]
   },
   {
     id: 4,
-    name: 'Shoes',
-    image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-    itemCount: 420,
+    name: "Sale Items",
+    image: "/assets/images/31427.jpg",
+    itemCount: 64,
+    description: "Great deals on selected items",
+    featured: true,
+    subcategories: ["Clearance", "Season End Sale", "Bundle Deals", "Flash Sales"]
   },
   {
     id: 5,
-    name: 'Bags',
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-    itemCount: 380,
+    name: "Accessories",
+    image: "/assets/images/night2.jpg",
+    itemCount: 95,
+    description: "Complete your look with our accessories",
+    subcategories: ["Jewelry", "Bags", "Scarves", "Hair Accessories"]
   },
   {
     id: 6,
-    name: 'Jewelry',
-    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-    itemCount: 290,
-  },
-  {
-    id: 7,
-    name: 'Sports & Fitness',
-    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-    itemCount: 520,
-  },
-  {
-    id: 8,
-    name: 'Beauty',
-    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60',
-    itemCount: 760,
-  },
+    name: "Beauty & Care",
+    image: "/assets/images/night3.jpg",
+    itemCount: 73,
+    description: "Premium beauty and self-care products",
+    subcategories: ["Skincare", "Haircare", "Bath & Body", "Aromatherapy"]
+  }
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5
+    }
+  }
+};
 
 export default function Categories() {
   return (
@@ -80,16 +107,17 @@ export default function Categories() {
                 to={`/products?category=${category.name.toLowerCase()}`}
                 className="group block"
               >
-                <div className="relative aspect-square overflow-hidden rounded-lg">
+                <div className="relative aspect-square overflow-hidden rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105">
                   <img
                     src={category.image}
                     alt={category.name}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
                     <h3 className="text-xl font-semibold mb-2">{category.name}</h3>
                     <p className="text-sm">{category.itemCount} Items</p>
+                    <p className="text-xs mt-1">{category.description}</p>
                   </div>
                 </div>
               </Link>

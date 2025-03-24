@@ -367,7 +367,7 @@ const DreamWearHomepage = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="text-3xl font-bold text-orange-600"
+              className="text-3xl font-bold text-yellow-600"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -386,11 +386,11 @@ const DreamWearHomepage = () => {
         transition={{ delay: 1, duration: 0.5 }}
       >
         <button
-          className="bg-green-600 hover:bg-green-700 text-white p-4 rounded-full flex items-center shadow-lg transform transition hover:scale-105"
+          className="bg-teal-600 hover:bg-teal-700 text-white p-4 rounded-full flex items-center shadow-lg transform transition hover:scale-105"
           onClick={() => navigate("/cart")}
         >
           <ShoppingBag size={24} />
-          <span className="absolute -top-2 -right-2 bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
+          <span className="absolute -top-2 -right-2 bg-yellow-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
             3
           </span>
         </button>
@@ -400,7 +400,7 @@ const DreamWearHomepage = () => {
       <AnimatePresence>
         {showPromo && (
           <motion.div
-            className="bg-gradient-to-r from-orange-500 to-green-600 text-white py-3 relative"
+            className="bg-gradient-to-r from-yellow-500 to-teal-600 text-white py-3 relative"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -413,7 +413,7 @@ const DreamWearHomepage = () => {
               </p>
               <button
                 onClick={() => setShowPromo(false)}
-                className="absolute right-4 top-2 text-white hover:text-green-200 transition"
+                className="absolute right-4 top-2 text-white hover:text-teal-200 transition"
                 aria-label="Close promotion"
               >
                 ✕
@@ -461,7 +461,7 @@ const DreamWearHomepage = () => {
                   animate={{ scale: 1 }}
                   transition={{ duration: 8 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 via-green-800/40 to-transparent flex items-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-300/70 via-teal-300/40 to-transparent flex items-center">
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -472,7 +472,7 @@ const DreamWearHomepage = () => {
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.6 }}
-                      className="inline-block px-3 py-1 bg-orange-500 text-white text-sm font-medium rounded-full mb-4"
+                      className="inline-block px-3 py-1 bg-yellow-500 text-white text-sm font-medium rounded-full mb-4"
                     >
                       NEW ARRIVAL
                     </motion.span>
@@ -482,7 +482,7 @@ const DreamWearHomepage = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.8 }}
                     >
-                      Summer Collection <br /> 2024
+                      Summer Collection <br /> 2025
                     </motion.h1>
                     <motion.p
                       className="text-lg md:text-xl mb-8 text-white/90 max-w-md"
@@ -501,7 +501,7 @@ const DreamWearHomepage = () => {
                     >
                       <motion.button
                         onClick={() => navigate("/category/womens-nightwear")}
-                        className="bg-gradient-to-r from-green-600 to-orange-500 text-white px-8 py-3 rounded-full hover:from-green-700 hover:to-orange-600 transition transform hover:scale-105 flex items-center justify-center gap-2"
+                        className="bg-gradient-to-r from-teal-600 to-yellow-300 text-white px-8 py-3 rounded-full hover:from-teal-700 hover:to-yellow-400 transition transform hover:scale-105 flex items-center justify-center gap-2"
                         whileHover={{
                           scale: 1.05,
                           boxShadow: "0 10px 25px -5px rgba(34, 197, 94, 0.4)",
@@ -532,7 +532,7 @@ const DreamWearHomepage = () => {
                   animate={{ scale: 1 }}
                   transition={{ duration: 8 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 via-green-800/40 to-transparent flex items-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-900/70 via-teal-800/40 to-transparent flex items-center">
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -543,7 +543,7 @@ const DreamWearHomepage = () => {
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
-                      className="inline-block px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-full mb-4"
+                      className="inline-block px-3 py-1 bg-teal-600 text-white text-sm font-medium rounded-full mb-4"
                     >
                       LUXURIOUS COMFORT
                     </motion.span>
@@ -572,7 +572,7 @@ const DreamWearHomepage = () => {
                     >
                       <motion.button
                         onClick={() => navigate("/products")}
-                        className="bg-gradient-to-r from-green-600 to-orange-500 text-white px-8 py-3 rounded-full hover:from-green-700 hover:to-orange-600 transition transform hover:scale-105 flex items-center justify-center gap-2"
+                        className="bg-gradient-to-r from-teal-600 to-yellow-500 text-white px-8 py-3 rounded-full hover:from-teal-700 hover:to-yellow-600 transition transform hover:scale-105 flex items-center justify-center gap-2"
                         whileHover={{
                           scale: 1.05,
                           boxShadow: "0 10px 25px -5px rgba(34, 197, 94, 0.4)",
@@ -597,8 +597,8 @@ const DreamWearHomepage = () => {
         </motion.div>
 
         {/* Custom navigation buttons */}
-        <div className="swiper-button-prev !hidden md:!flex !left-6 !text-white !bg-green-600/40 hover:!bg-green-600/70 !w-12 !h-12 !rounded-full after:!text-lg transition-all duration-300"></div>
-        <div className="swiper-button-next !hidden md:!flex !right-6 !text-white !bg-green-600/40 hover:!bg-green-600/70 !w-12 !h-12 !rounded-full after:!text-lg transition-all duration-300"></div>
+        <div className="swiper-button-prev !hidden md:!flex !left-6 !text-white !bg-teal-600/40 hover:!bg-teal-600/70 !w-12 !h-12 !rounded-full after:!text-lg transition-all duration-300"></div>
+        <div className="swiper-button-next !hidden md:!flex !right-6 !text-white !bg-teal-600/40 hover:!bg-teal-600/70 !w-12 !h-12 !rounded-full after:!text-lg transition-all duration-300"></div>
 
         {/* Scroll indicator */}
         <motion.div
@@ -668,12 +668,12 @@ const DreamWearHomepage = () => {
           </motion.div>
 
           <div className="flex justify-center mb-8">
-            <div className="inline-flex border border-green-200 rounded-full p-1 bg-white shadow-sm">
+            <div className="inline-flex border border-teal-200 rounded-full p-1 bg-white shadow-sm">
               <button
                 className={`px-6 py-2 rounded-full text-sm font-medium transition ${
                   activeTab === "new"
-                    ? "bg-green-600 text-white"
-                    : "text-gray-700 hover:bg-green-50"
+                    ? "bg-teal-600 text-white"
+                    : "text-gray-700 hover:bg-teal-50"
                 }`}
                 onClick={() => setActiveTab("new")}
               >
@@ -682,8 +682,8 @@ const DreamWearHomepage = () => {
               <button
                 className={`px-6 py-2 rounded-full text-sm font-medium transition ${
                   activeTab === "popular"
-                    ? "bg-green-600 text-white"
-                    : "text-gray-700 hover:bg-green-50"
+                    ? "bg-teal-600 text-white"
+                    : "text-gray-700 hover:bg-teal-50"
                 }`}
                 onClick={() => setActiveTab("popular")}
               >
@@ -692,8 +692,8 @@ const DreamWearHomepage = () => {
               <button
                 className={`px-6 py-2 rounded-full text-sm font-medium transition ${
                   activeTab === "sale"
-                    ? "bg-green-600 text-white"
-                    : "text-gray-700 hover:bg-green-50"
+                    ? "bg-teal-600 text-white"
+                    : "text-gray-700 hover:bg-teal-50"
                 }`}
                 onClick={() => setActiveTab("sale")}
               >
@@ -716,7 +716,7 @@ const DreamWearHomepage = () => {
 
           <div className="text-center mt-12">
             <motion.button
-              className="bg-white text-green-600 border-2 border-green-600 px-8 py-3 rounded-full hover:bg-green-50 transition flex items-center gap-2 mx-auto"
+              className="bg-white text-teal-600 border-2 border-teal-600 px-8 py-3 rounded-full hover:bg-teal-50 transition flex items-center gap-2 mx-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -727,7 +727,7 @@ const DreamWearHomepage = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16 bg-gradient-to-r from-green-600 to-orange-500 text-white">
+      <section className="py-16 bg-gradient-to-r from-teal-600 to-yellow-500 text-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <motion.div
@@ -738,7 +738,7 @@ const DreamWearHomepage = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-bold mb-4">Join Our Newsletter</h2>
-              <p className="text-green-100 mb-6 max-w-md">
+              <p className="text-teal-100 mb-6 max-w-md">
                 Sign up to receive updates on new collections, special offers
                 and other discount information.
               </p>
@@ -756,13 +756,13 @@ const DreamWearHomepage = () => {
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     placeholder="Your email address"
-                    className="w-full pl-10 pr-3 py-3 rounded-l-full border-0 focus:ring-2 focus:ring-green-300 text-gray-800"
+                    className="w-full pl-10 pr-3 py-3 rounded-l-full border-0 focus:ring-2 focus:ring-teal-300 text-gray-800"
                     required
                   />
                 </div>
                 <button
                   type="submit"
-                  className="bg-white text-green-600 px-6 py-3 rounded-r-full hover:bg-green-50 transition-colors flex items-center"
+                  className="bg-white text-teal-600 px-6 py-3 rounded-r-full hover:bg-teal-50 transition-colors flex items-center"
                 >
                   <ArrowRight size={20} />
                 </button>
@@ -849,7 +849,7 @@ const DreamWearHomepage = () => {
                     <span className="text-sm text-white/70">
                       {collection.itemCount} Items
                     </span>
-                    <button className="text-white flex items-center gap-1 text-sm group-hover:text-green-300 transition-colors">
+                    <button className="text-white flex items-center gap-1 text-sm group-hover:text-teal-300 transition-colors">
                       View Collection <ChevronRight size={16} />
                     </button>
                   </div>
@@ -891,14 +891,13 @@ const DreamWearHomepage = () => {
           <div className="text-center mt-8">
             <a
               href="/testimonials"
-              className="text-green-600 inline-flex items-center"
+              className="text-teal-600 inline-flex items-center"
             >
               View all testimonials <ChevronRight size={16} className="ml-1" />
             </a>
           </div>
         </div>
       </section>
-
     </div>
   );
 };

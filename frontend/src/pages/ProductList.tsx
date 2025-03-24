@@ -115,7 +115,7 @@ const products: Product[] = [
     stockStatus: "In Stock",
     freeShipping: true,
     arrivalDate: "Delivery by Mar 21",
-    colors: ["Green", "Blue", "Red"],
+    colors: ["teal", "Blue", "Red"],
     sizes: ["3T", "4T", "5T", "6T"],
     description: "Adorable dinosaur-themed pajamas your kids will love.",
     features: [
@@ -142,7 +142,7 @@ const products: Product[] = [
     stockStatus: "In Stock",
     freeShipping: true,
     arrivalDate: "Delivery by Mar 21",
-    colors: ["Green", "Blue", "Red"],
+    colors: ["teal", "Blue", "Red"],
     sizes: ["3T", "4T", "5T", "6T"],
     description: "Adorable dinosaur-themed pajamas your kids will love.",
     features: [
@@ -169,7 +169,7 @@ const products: Product[] = [
     stockStatus: "In Stock",
     freeShipping: true,
     arrivalDate: "Delivery by Mar 21",
-    colors: ["Green", "Blue", "Red"],
+    colors: ["teal", "Blue", "Red"],
     sizes: ["3T", "4T", "5T", "6T"],
     description: "Adorable dinosaur-themed pajamas your kids will love.",
     features: [
@@ -196,7 +196,7 @@ const products: Product[] = [
     stockStatus: "In Stock",
     freeShipping: true,
     arrivalDate: "Delivery by Mar 21",
-    colors: ["Green", "Blue", "Red"],
+    colors: ["teal", "Blue", "Red"],
     sizes: ["3T", "4T", "5T", "6T"],
     description: "Adorable dinosaur-themed pajamas your kids will love.",
     features: [
@@ -226,7 +226,7 @@ const colorOptions = [
   { name: "White", code: "#FFFFFF" },
   { name: "Blue", code: "#0000FF" },
   { name: "Pink", code: "#FFC0CB" },
-  { name: "Green", code: "#008000" },
+  { name: "teal", code: "#008000" },
   { name: "Red", code: "#FF0000" },
 ];
 
@@ -452,7 +452,7 @@ const ProductList = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 px-4 text-center">
+      <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-3 px-4 text-center">
         <p className="text-sm font-medium animate-pulse">
           🌟 Special Offer: Free Shipping on Orders Over $75! Limited Time Only
         </p>
@@ -470,7 +470,7 @@ const ProductList = () => {
             </button>
         
             {/* Logo placeholder */}
-            <div className="font-bold text-xl text-orange-500">SleepStyle</div>
+            <div className="font-bold text-xl text-yellow-500">SleepStyle</div>
           </div>
 
           {/* Search Bar - Now in the header */}
@@ -480,7 +480,7 @@ const ProductList = () => {
               placeholder="Search products..."
               value={searchQuery}
               onChange={handleSearchQueryChange}
-              className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500"
+              className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-yellow-500"
             />
             <Search className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
             
@@ -514,7 +514,7 @@ const ProductList = () => {
                       <div className="p-3 text-center border-t">
                         <button 
                           onClick={closeSearchResults}
-                          className="text-sm text-orange-500 hover:underline"
+                          className="text-sm text-yellow-500 hover:underline"
                         >
                           View all {filteredProducts.length} results
                         </button>
@@ -534,7 +534,7 @@ const ProductList = () => {
             <button className="relative p-2" onClick={() => setIsCartSidebarOpen(true)}>
               <ShoppingCart className="h-6 w-6" />
               {cart.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-yellow-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                   {cart.reduce((acc, item) => acc + item.quantity, 0)}
                 </span>
               )}
@@ -566,7 +566,7 @@ const ProductList = () => {
               placeholder="Search products..."
               value={searchQuery}
               onChange={handleSearchQueryChange}
-              className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500"
+              className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-yellow-500"
             />
             <Search className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
             
@@ -609,7 +609,7 @@ const ProductList = () => {
         <nav className="text-sm mb-6">
           <ol className="flex items-center space-x-2">
             <li>
-              <a href="/" className="text-gray-500 hover:text-orange-500">
+              <a href="/" className="text-gray-500 hover:text-yellow-500">
                 Home
               </a>
             </li>
@@ -629,7 +629,7 @@ const ProductList = () => {
               onClick={() => setActiveTab("all")}
               className={`px-4 py-2 rounded-md text-sm font-medium ${
                 activeTab === "all"
-                  ? "bg-orange-500 text-white"
+                  ? "bg-yellow-500 text-white"
                   : "bg-gray-100 hover:bg-gray-200 text-gray-700"
               } transition-colors`}
             >
@@ -639,7 +639,7 @@ const ProductList = () => {
               onClick={() => setActiveTab("new")}
               className={`px-4 py-2 rounded-md text-sm font-medium ${
                 activeTab === "new"
-                  ? "bg-orange-500 text-white"
+                  ? "bg-yellow-500 text-white"
                   : "bg-gray-100 hover:bg-gray-200 text-gray-700"
               } transition-colors`}
             >
@@ -649,7 +649,7 @@ const ProductList = () => {
               onClick={() => setActiveTab("sale")}
               className={`px-4 py-2 rounded-md text-sm font-medium ${
                 activeTab === "sale"
-                  ? "bg-orange-500 text-white"
+                  ? "bg-yellow-500 text-white"
                   : "bg-gray-100 hover:bg-gray-200 text-gray-700"
               } transition-colors`}
             >
@@ -664,7 +664,7 @@ const ProductList = () => {
                 }}
                 className={`px-4 py-2 rounded-md text-sm font-medium ${
                   activeTab === category.name.toLowerCase()
-                    ? "bg-orange-500 text-white"
+                    ? "bg-yellow-500 text-white"
                     : "bg-gray-100 hover:bg-gray-200 text-gray-700"
                 } transition-colors`}
               >
@@ -694,7 +694,7 @@ const ProductList = () => {
                     </button>
                     <button
                       onClick={clearFilters}
-                      className="text-sm text-orange-500 hover:text-orange-600 flex items-center"
+                      className="text-sm text-yellow-500 hover:text-yellow-600 flex items-center"
                     >
                       <RefreshCw className="h-3 w-3 mr-1" />
                       Reset
@@ -728,9 +728,9 @@ const ProductList = () => {
                               type="checkbox"
                               checked={filterCategory === category.name}
                               onChange={() => handleCategoryChange(category.name)}
-                              className="form-checkbox h-4 w-4 text-orange-500 rounded border-gray-300 focus:ring-orange-500"
+                              className="form-checkbox h-4 w-4 text-yellow-500 rounded border-gray-300 focus:ring-yellow-500"
                             />
-                            <span className="ml-3 text-gray-600 group-hover:text-orange-500 transition-colors">
+                            <span className="ml-3 text-gray-600 group-hover:text-yellow-500 transition-colors">
                               {category.name}
                             </span>
                           </div>
@@ -767,7 +767,7 @@ const ProductList = () => {
                           onChange={(e) =>
                             handlePriceChange(Number(e.target.value), priceRange[1])
                           }
-                          className="w-24 px-3 py-2 border rounded-md focus:ring-orange-500 focus:border-orange-500"
+                          className="w-24 px-3 py-2 border rounded-md focus:ring-yellow-500 focus:border-yellow-500"
                         />
                         <span className="text-gray-500">-</span>
                         <input
@@ -777,13 +777,13 @@ const ProductList = () => {
                           onChange={(e) =>
                             handlePriceChange(priceRange[0], Number(e.target.value))
                           }
-                          className="w-24 px-3 py-2 border rounded-md focus:ring-orange-500 focus:border-orange-500"
+                          className="w-24 px-3 py-2 border rounded-md focus:ring-yellow-500 focus:border-yellow-500"
                         />
                       </div>
                       <div className="py-2 px-2">
                         <div className="h-2 bg-gray-200 rounded-full">
                           <div 
-                            className="h-2 bg-orange-500 rounded-full" 
+                            className="h-2 bg-yellow-500 rounded-full" 
                             style={{ 
                               width: `${((priceRange[1] - priceRange[0]) / 200) * 100}%`,
                               marginLeft: `${(priceRange[0] / 200) * 100}%`
@@ -792,7 +792,7 @@ const ProductList = () => {
                         </div>
                       </div>
                       <button 
-                        className="w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition-colors"
+                        className="w-full bg-yellow-500 text-white py-2 rounded-md hover:bg-yellow-600 transition-colors"
                       >
                         Apply
                       </button>
@@ -822,7 +822,7 @@ const ProductList = () => {
                           className={`px-3 py-2 rounded-md text-sm font-medium
                             ${
                               selectedSizes.includes(size)
-                                ? "bg-orange-500 text-white"
+                                ? "bg-yellow-500 text-white"
                                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                             } transition-colors`}
                           onClick={() => {
@@ -859,7 +859,7 @@ const ProductList = () => {
                                           {colorOptions.map((color) => (
                                             <button
                                               key={color.name}
-                                              className={`relative w-8 h-8 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500`}
+                                              className={`relative w-8 h-8 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500`}
                                               style={{ backgroundColor: color.code }}
                                               onClick={() => {
                                                 setSelectedColors((prev) =>
@@ -910,7 +910,7 @@ const ProductList = () => {
                                                         : [...prev, brand.name]
                                                     );
                                                   }}
-                                                  className="form-checkbox h-4 w-4 text-orange-500"
+                                                  className="form-checkbox h-4 w-4 text-yellow-500"
                                                 />
                                                 <span className="ml-3 text-gray-600">{brand.name}</span>
                                               </div>
@@ -942,7 +942,7 @@ const ProductList = () => {
                                               key={rating}
                                               onClick={() => setRatingFilter(rating === ratingFilter ? 0 : rating)}
                                               className={`flex items-center w-full p-2 rounded-md transition-colors ${
-                                                rating === ratingFilter ? 'bg-orange-50' : 'hover:bg-gray-50'
+                                                rating === ratingFilter ? 'bg-yellow-50' : 'hover:bg-gray-50'
                                               }`}
                                             >
                                               <div className="flex text-yellow-400">
@@ -973,7 +973,7 @@ const ProductList = () => {
                                         onClick={() => setViewMode("grid")}
                                         className={`p-2 rounded-md ${
                                           viewMode === "grid"
-                                            ? "bg-orange-500 text-white"
+                                            ? "bg-yellow-500 text-white"
                                             : "text-gray-600 hover:bg-gray-100"
                                         }`}
                                       >
@@ -983,7 +983,7 @@ const ProductList = () => {
                                         onClick={() => setViewMode("list")}
                                         className={`p-2 rounded-md ${
                                           viewMode === "list"
-                                            ? "bg-orange-500 text-white"
+                                            ? "bg-yellow-500 text-white"
                                             : "text-gray-600 hover:bg-gray-100"
                                         }`}
                                       >
@@ -995,7 +995,7 @@ const ProductList = () => {
                                       <select
                                         value={sortBy}
                                         onChange={(e) => setSortBy(e.target.value)}
-                                        className="appearance-none bg-white border border-gray-300 rounded-lg py-2 pl-4 pr-10 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+                                        className="appearance-none bg-white border border-gray-300 rounded-lg py-2 pl-4 pr-10 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                                       >
                                         <option value="featured">Featured</option>
                                         <option value="price-low">Price: Low to High</option>
@@ -1037,7 +1037,7 @@ const ProductList = () => {
                                         {/* Badges */}
                                         <div className="absolute top-2 left-2 flex flex-col gap-2">
                                           {product.badge && (
-                                            <span className="px-2 py-1 text-xs font-semibold rounded-full bg-orange-500 text-white">
+                                            <span className="px-2 py-1 text-xs font-semibold rounded-full bg-yellow-500 text-white">
                                               {product.badge}
                                             </span>
                                           )}
@@ -1047,7 +1047,7 @@ const ProductList = () => {
                                             </span>
                                           )}
                                           {product.isNewArrival && (
-                                            <span className="px-2 py-1 text-xs font-semibold rounded-full bg-green-500 text-white">
+                                            <span className="px-2 py-1 text-xs font-semibold rounded-full bg-teal-500 text-white">
                                               NEW
                                             </span>
                                           )}
@@ -1090,7 +1090,7 @@ const ProductList = () => {
                     
                                       {/* Product Info */}
                                       <div className={`p-4 flex flex-col ${viewMode === "list" ? "w-2/3" : ""}`}>
-                                        <h3 className="text-lg font-medium text-gray-900 group-hover:text-orange-500 transition-colors">
+                                        <h3 className="text-lg font-medium text-gray-900 group-hover:text-yellow-500 transition-colors">
                                           {product.name}
                                         </h3>
                     
@@ -1106,7 +1106,7 @@ const ProductList = () => {
                                             )}
                                           </div>
                                           {product.freeShipping && (
-                                            <span className="text-sm text-green-600 flex items-center">
+                                            <span className="text-sm text-teal-600 flex items-center">
                                               <Truck className="h-4 w-4 mr-1" />
                                               Free Shipping
                                             </span>
@@ -1142,8 +1142,8 @@ const ProductList = () => {
                                           <span
                                             className={`text-sm font-medium ${
                                               product.stockStatus === "In Stock"
-                                                ? "text-green-600"
-                                                : "text-orange-600"
+                                                ? "text-teal-600"
+                                                : "text-yellow-600"
                                             }`}
                                           >
                                             {product.stockStatus}
@@ -1155,7 +1155,7 @@ const ProductList = () => {
                     
                                         <button
                                           onClick={() => addToCart(product.id)}
-                                          className="mt-4 w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition-colors flex items-center justify-center"
+                                          className="mt-4 w-full bg-yellow-500 text-white py-2 rounded-md hover:bg-yellow-600 transition-colors flex items-center justify-center"
                                         >
                                           Add to Cart
                                           <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -1182,7 +1182,7 @@ const ProductList = () => {
                                           onClick={() => setCurrentPage(i + 1)}
                                           className={`px-4 py-2 border rounded-md ${
                                             currentPage === i + 1
-                                              ? 'bg-orange-500 text-white'
+                                              ? 'bg-yellow-500 text-white'
                                               : 'hover:bg-gray-50'
                                           }`}
                                         >
@@ -1247,7 +1247,7 @@ const ProductList = () => {
                                           addToCart(quickViewProduct.id);
                                           setQuickViewProduct(null);
                                         }}
-                                        className="w-full bg-orange-500 text-white py-3 rounded-md hover:bg-orange-600 transition-colors"
+                                        className="w-full bg-yellow-500 text-white py-3 rounded-md hover:bg-yellow-600 transition-colors"
                                       >
                                         Add to Cart
                                       </button>
@@ -1262,7 +1262,7 @@ const ProductList = () => {
                           {isCartOpen && (
                             <div className="fixed bottom-4 right-4 bg-white rounded-lg shadow-lg p-4 animate-slide-up z-50">
                               <div className="flex items-center gap-4">
-                                <Check className="h-6 w-6 text-green-500" />
+                                <Check className="h-6 w-6 text-teal-500" />
                                 <span>Added to cart successfully!</span>
                               </div>
                             </div>
@@ -1340,7 +1340,7 @@ const ProductList = () => {
                                         <span className="font-semibold">Total:</span>
                                         <span className="font-semibold">${cartTotal.toFixed(2)}</span>
                                       </div>
-                                      <button className="w-full bg-orange-500 text-white py-3 rounded-md hover:bg-orange-600 transition-colors">
+                                      <button className="w-full bg-yellow-500 text-white py-3 rounded-md hover:bg-yellow-600 transition-colors">
                                         Checkout
                                       </button>
                                     </div>

@@ -11,6 +11,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Deals from "./pages/Deals";
+import Categories from "./pages/Categories";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingProvider from "./components/LoadingProvider";
 
@@ -29,6 +31,8 @@ function AnimatedRoutes() {
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/deals" element={<Deals />} />
       </Routes>
     </AnimatePresence>
   );

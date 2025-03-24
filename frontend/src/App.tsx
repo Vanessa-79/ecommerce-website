@@ -34,7 +34,7 @@ function AnimatedRoutes() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/deals" element={<Deals />} />
-        <Route path="/lookbook" element={<LookBook />} />
+        <Route path="/lookBook" element={<LookBook />} />
       </Routes>
     </AnimatePresence>
   );

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const Lookbook = () => {
+const LookBook = () => {
   const collections = [
     {
       id: 1,
@@ -77,4 +77,4 @@ const Lookbook = () => {
   );
 };
 
-export default Lookbook;
+export default LookBook;

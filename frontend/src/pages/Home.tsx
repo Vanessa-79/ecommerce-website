@@ -521,12 +521,12 @@ const DreamWearHomepage = () => {
                         Shop Now <ChevronRight size={18} />
                       </motion.button>
                       <motion.button
-                      onClick={() => navigate("/lookbook")}
+                      onClick={() => navigate("/lookBook")}
                         className="px-8 py-3 rounded-full border-2 border-white text-white hover:bg-white/10 transition flex items-center justify-center"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        View Lookbook
+                        View LookBook
                       </motion.button>
                     </motion.div>
                   </motion.div>

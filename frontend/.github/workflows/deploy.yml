@@ -4,14 +4,22 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'frontend/**'  # This ensures the workflow only runs when files in frontend directory change
   pull_request:
     branches:
       - main
+    paths:
+      - 'frontend/**'
 
 jobs:
   deploy:
     name: Deploy Frontend to Render
     runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ../../  # Navigate back to root since GitHub Actions checks out the whole repo
     
     steps:
       - name: Checkout repository
@@ -22,18 +30,22 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: './package-lock.json'
+          cache-dependency-path: 'frontend/package-lock.json'
           
       - name: Install dependencies
+        working-directory: frontend
         run: npm ci
         
       - name: Run linting
+        working-directory: frontend
         run: npm run lint
         
       - name: Build project
+        working-directory: frontend
         run: npm run build
         
       - name: Deploy to Render
+        working-directory: frontend
         env:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
           RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}

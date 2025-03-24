@@ -1,0 +1,17 @@
+services:
+  - type: static
+    name: ecommerce-frontend
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    pullRequestPreviewsEnabled: true
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html 

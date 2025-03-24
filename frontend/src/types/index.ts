@@ -1,6 +1,8 @@
 export interface Category {
+  id: number;
   name: string;
   image: string;
+  count?: number;
 }
 
 export interface Product {
@@ -11,6 +13,11 @@ export interface Product {
   description?: string;
   category?: string;
   inStock?: boolean;
+  rating?: number;
+  reviewCount?: number;
+  isFeatured?: boolean;
+  isNew?: boolean;
+  discount?: number;
 }
 
 export interface Testimonial {
@@ -19,6 +26,7 @@ export interface Testimonial {
   location: string;
   text: string;
   avatar: string;
+  rating: number;
 }
 
 export interface CartItem extends Product {

@@ -4,9 +4,10 @@ import { Category } from '../types';
 interface CategoryCardProps {
   category: Category;
   onClick?: () => void;
+  index?: number;
 }
 
-export default function CategoryCard({ category, onClick }: CategoryCardProps) {
+export default function CategoryCard({ category, onClick, index }: CategoryCardProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}

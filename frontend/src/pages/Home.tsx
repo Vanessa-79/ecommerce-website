@@ -17,7 +17,7 @@ import 'swiper/css/effect-fade';
 const DreamWearHomepage = () => {
   const [showPromo, setShowPromo] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeTab, setActiveTab] = useState("new");
+  const [activeTab, setActiveTab] = useState<'new' | 'popular' | 'sale'>("new");
   const [isLoaded, setIsLoaded] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [showCollection, setShowCollection] = useState(false);
@@ -31,7 +31,13 @@ const DreamWearHomepage = () => {
   }, []);
 
   // Featured products by category
-  const productsByCategory = {
+  type ProductsByCategory = {
+    new: Product[];
+    popular: Product[];
+    sale: Product[];
+  };
+
+  const productsByCategory: ProductsByCategory = {
     new: [
       {
         id: 1,
@@ -260,25 +266,25 @@ const DreamWearHomepage = () => {
     {
       id: 1,
       name: "Sarah Johnson",
-      location: "New York",
+      location: "Kenya",
       text: "The quality of the nightwear is exceptional. So comfortable and stylish! I've ordered several pieces and each one exceeds my expectations. The attention to detail is impressive.",
-      avatar: "/images/products/avatar1.jpg",
+      avatar: "/images/products/night5.jpg",
       rating: 5,
     },
     {
       id: 2,
       name: "Emily Davis",
-      location: "London",
+      location: "Kampala",
       text: "My daughter loves her new overalls. The fit is perfect and the material is durable. Even after multiple washes, they look as good as new. Will definitely be ordering more!",
-      avatar: "/images/products/avatar2.jpg",
+      avatar: "/images/products/night4.jpg",
       rating: 4,
     },
     {
       id: 3,
       name: "Michelle Wong",
-      location: "Singapore",
+      location: "France",
       text: "The gym wear is both functional and fashionable. Highly recommend! The fabric is breathable yet supportive, and the designs are flattering. Perfect for my yoga sessions.",
-      avatar: "/images/products/avatar3.jpg",
+      avatar: "/images/products/night2.jpg",
       rating: 5,
     },
   ];
@@ -511,6 +517,7 @@ const DreamWearHomepage = () => {
                         Shop Now <ChevronRight size={18} />
                       </motion.button>
                       <motion.button
+                      onClick={() => navigate("/lookbook")}
                         className="px-8 py-3 rounded-full border-2 border-white text-white hover:bg-white/10 transition flex items-center justify-center"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
@@ -582,6 +589,7 @@ const DreamWearHomepage = () => {
                         Explore Collection <ChevronRight size={18} />
                       </motion.button>
                       <motion.button
+                      onClick={() => navigate("/products")}
                         className="px-8 py-3 rounded-full border-2 border-white text-white hover:bg-white/10 transition flex items-center justify-center"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
@@ -818,7 +826,7 @@ const DreamWearHomepage = () => {
               Our Collections
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Explore our carefully curated collections
+              Discover our carefully curated collections
             </p>
           </motion.div>
 

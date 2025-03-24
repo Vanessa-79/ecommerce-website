@@ -133,18 +133,18 @@ export default function Footer() {
             <ul className="mt-4 space-y-4">
               <li className="flex items-start">
                 <Phone className="w-5 h-5 text-yellow-500 mr-2 mt-1" />
-                <span className="text-white">+1 (800) 123-4567</span>
+                <span className="text-white">+256 (785) 507-825</span>
               </li>
               <li className="flex items-start">
                 <Mail className="w-5 h-5 text-yellow-500 mr-2 mt-1" />
-                <span className="text-white">support@dreamwear.com</span>
+                <span className="text-white">vanessa@dreamwear.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-yellow-500 mr-2 mt-1" />
                 <span className="text-white">
-                  123 Fashion St.
+                  Uganda
                   <br />
-                  New York, NY 10001
+                  Salaama Road
                 </span>
               </li>
             </ul>

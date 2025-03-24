@@ -7,7 +7,7 @@ const categories = [
   {
     id: 1,
     name: "Women's Nightwear",
-    image: "../../src/assets/images/night5.jpg",
+    image: "/images/night5.jpg",
     itemCount: 42,
     description: "Luxurious and comfortable nightwear collection",
     featured: true,
@@ -21,7 +21,7 @@ const categories = [
   {
     id: 2,
     name: "Women's Gymwear",
-    image: "../../src/assets/images/night6.jpg",
+    image: "/images/night6.jpg",
     itemCount: 36,
     description: "High-performance activewear for your fitness journey",
     featured: true,
@@ -35,7 +35,7 @@ const categories = [
   {
     id: 3,
     name: "Children's Clothing",
-    image: "../../src/assets/images/13189.jpg",
+    image: "/images/13189.jpg",
     itemCount: 28,
     description: "Adorable and comfortable clothing for kids",
     featured: true,
@@ -44,7 +44,7 @@ const categories = [
   {
     id: 4,
     name: "Sale Items",
-    image: "../../src/assets/images/31427.jpg",
+    image: "/images/31427.jpg",
     itemCount: 64,
     description: "Great deals on selected items",
     featured: true,
@@ -58,7 +58,7 @@ const categories = [
   {
     id: 5,
     name: "Accessories",
-    image: "../../src/assets/images/night2.jpg",
+    image: "/images/night2.jpg",
     itemCount: 95,
     description: "Complete your look with our accessories",
     subcategories: ["Jewelry", "Bags", "Scarves", "Hair Accessories"],
@@ -66,7 +66,7 @@ const categories = [
   {
     id: 6,
     name: "Beauty & Care",
-    image: "../../src/assets/images/night3.jpg",
+    image: "/images/night3.jpg",
     itemCount: 73,
     description: "Premium beauty and self-care products",
     subcategories: ["Skincare", "Haircare", "Bath & Body", "Aromatherapy"],

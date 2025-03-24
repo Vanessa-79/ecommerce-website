@@ -37,7 +37,7 @@ const DreamWearHomepage = () => {
         id: 1,
         name: "Silk Pajama Set",
         price: 89.99,
-        image: "../../src/assets/images/night1.jpg",
+        image: "/images/night1.jpg",
         category: "Women's Nightwear",
         inStock: true,
         rating: 4.8,
@@ -51,7 +51,7 @@ const DreamWearHomepage = () => {
         id: 2,
         name: "Elegant Night Robe",
         price: 69.99,
-        image: "../../src/assets/images/night2.jpg",
+        image: "/images/night2.jpg",
         category: "Women's Nightwear",
         inStock: true,
         rating: 4.7,
@@ -65,7 +65,7 @@ const DreamWearHomepage = () => {
         id: 3,
         name: "Cozy Sleep Set",
         price: 79.99,
-        image: "../../src/assets/images/night3.jpg",
+        image: "/images/night3.jpg",
         category: "Women's Nightwear",
         inStock: true,
         rating: 4.5,
@@ -79,7 +79,7 @@ const DreamWearHomepage = () => {
         id: 4,
         name: "Luxury Night Dress",
         price: 59.99,
-        image: "../../src/assets/images/night4.jpg",
+        image: "/images/night4.jpg",
         category: "Women's Nightwear",
         inStock: true,
         rating: 4.6,
@@ -95,7 +95,7 @@ const DreamWearHomepage = () => {
         id: 5,
         name: "Cotton Nightgown",
         price: 49.99,
-        image: "../../src/assets/images/night5.jpg",
+        image: "/images/night5.jpg",
         category: "Women's Nightwear",
         inStock: true,
         rating: 4.9,
@@ -109,7 +109,7 @@ const DreamWearHomepage = () => {
         id: 6,
         name: "Satin Sleep Mask",
         price: 19.99,
-        image: "../../src/assets/images/night6.jpg",
+        image: "/images/night6.jpg",
         category: "Accessories",
         inStock: true,
         rating: 4.8,
@@ -123,7 +123,7 @@ const DreamWearHomepage = () => {
         id: 7,
         name: "Fleece Pajama Set",
         price: 64.99,
-        image: "../../src/assets/images/night1.jpg",
+        image: "/images/night1.jpg",
         category: "Women's Nightwear",
         inStock: true,
         rating: 4.7,
@@ -137,7 +137,7 @@ const DreamWearHomepage = () => {
         id: 8,
         name: "Silk Sleeping Bonnet",
         price: 29.99,
-        image: "../../src/assets/images/night2.jpg",
+        image: "/images/night2.jpg",
         category: "Accessories",
         inStock: true,
         rating: 4.6,
@@ -154,7 +154,7 @@ const DreamWearHomepage = () => {
         name: "Lace Trim Camisole",
         originalPrice: 54.99,
         price: 39.99,
-        image: "../../src/assets/images/night3.jpg",
+        image: "/images/night3.jpg",
         category: "Women's Nightwear",
         inStock: true,
         rating: 4.5,
@@ -169,7 +169,7 @@ const DreamWearHomepage = () => {
         name: "Velvet Robe",
         originalPrice: 89.99,
         price: 69.99,
-        image: "../../src/assets/images/night4.jpg",
+        image: "/images/night4.jpg",
         category: "Women's Nightwear",
         inStock: true,
         rating: 4.7,
@@ -184,7 +184,7 @@ const DreamWearHomepage = () => {
         name: "Cotton Shorts Set",
         originalPrice: 59.99,
         price: 44.99,
-        image: "../../src/assets/images/night5.jpg",
+        image: "/images/night5.jpg",
         category: "Women's Nightwear",
         inStock: true,
         rating: 4.4,
@@ -199,7 +199,7 @@ const DreamWearHomepage = () => {
         name: "Satin Pillowcase",
         originalPrice: 34.99,
         price: 24.99,
-        image: "../../src/assets/images/night6.jpg",
+        image: "/images/night6.jpg",
         category: "Accessories",
         inStock: true,
         rating: 4.8,
@@ -215,22 +215,22 @@ const DreamWearHomepage = () => {
   const categories: Category[] = [
     {
       name: "Women's Nightwear",
-      image: "../../src/assets/images/night5.jpg",
+      image: "/images/night5.jpg",
       count: 42,
     },
     {
       name: "Women's Gymwear",
-      image: "../../src/assets/images/night6.jpg",
+      image: "/images/night6.jpg",
       count: 36,
     },
     {
       name: "Children's Clothing",
-      image: "../../src/assets/images/13189.jpg",
+      image: "/images/13189.jpg",
       count: 28,
     },
     {
       name: "Sale Items",
-      image: "../../src/assets/images/31427.jpg",
+      image: "/images/31427.jpg",
       count: 64,
     },
   ];
@@ -238,19 +238,19 @@ const DreamWearHomepage = () => {
   const collections = [
     {
       name: "Summer Dream",
-      image: "/assets/images/night1.jpg",
+      image: "/images/night1.jpg",
       description: "Light and airy nightwear for warm summer nights",
       itemCount: 24,
     },
     {
       name: "Cozy Winter",
-      image: "../../src/assets/images/night2.jpg",
+      image: "/images/night2.jpg",
       description: "Warm and comfortable nightwear for cold winter nights",
       itemCount: 18,
     },
     {
       name: "Luxury Silk",
-      image: "../../src/assets/images/night3.jpg",
+      image: "/images/night3.jpg",
       description: "Premium silk nightwear for the ultimate luxury experience",
       itemCount: 16,
     },
@@ -262,7 +262,7 @@ const DreamWearHomepage = () => {
       name: "Sarah Johnson",
       location: "New York",
       text: "The quality of the nightwear is exceptional. So comfortable and stylish! I've ordered several pieces and each one exceeds my expectations. The attention to detail is impressive.",
-      avatar: "../../src/assets/images/products/avatar1.jpg",
+      avatar: "/images/products/avatar1.jpg",
       rating: 5,
     },
     {
@@ -270,7 +270,7 @@ const DreamWearHomepage = () => {
       name: "Emily Davis",
       location: "London",
       text: "My daughter loves her new overalls. The fit is perfect and the material is durable. Even after multiple washes, they look as good as new. Will definitely be ordering more!",
-      avatar: "../../src/assets/images/products/avatar2.jpg",
+      avatar: "/images/products/avatar2.jpg",
       rating: 4,
     },
     {
@@ -278,7 +278,7 @@ const DreamWearHomepage = () => {
       name: "Michelle Wong",
       location: "Singapore",
       text: "The gym wear is both functional and fashionable. Highly recommend! The fabric is breathable yet supportive, and the designs are flattering. Perfect for my yoga sessions.",
-      avatar: "../../src/assets/images/products/avatar3.jpg",
+      avatar: "/images/products/avatar3.jpg",
       rating: 5,
     },
   ];
@@ -454,7 +454,7 @@ const DreamWearHomepage = () => {
             <SwiperSlide>
               <div className="relative h-full w-full overflow-hidden">
                 <motion.img
-                  src="../../src/assets/images/night4.jpg"
+                  src="/images/night4.jpg"
                   alt="Hero 1"
                   className="w-full h-full object-cover"
                   initial={{ scale: 1.1 }}
@@ -525,7 +525,7 @@ const DreamWearHomepage = () => {
             <SwiperSlide>
               <div className="relative h-full w-full">
                 <motion.img
-                  src="../../src/assets/images/night2.jpg"
+                  src="/images/night2.jpg"
                   alt="Hero 2"
                   className="w-full h-full object-cover"
                   initial={{ scale: 1.1 }}

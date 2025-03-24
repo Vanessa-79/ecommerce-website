@@ -61,19 +61,19 @@ const AboutPage = () => {
     {
       name: "Sarah Johnson",
       role: "Founder & CEO",
-      image: "../../src/assets/images/night1.jpg",
+      image: "/images/night1.jpg",
       quote: "Creating comfortable sleepwear that makes you feel amazing.",
     },
     {
       name: "Michael Chen",
       role: "Head of Design",
-      image: "../../src/assets/images/night1.jpg",
+      image: "/images/night1.jpg",
       quote: "Every piece tells a story of comfort and style.",
     },
     {
       name: "Emma Williams",
       role: "Product Director",
-      image: "../../src/assets/images/night1.jpg",
+      image: "/images/night1.jpg",
       quote: "Quality is at the heart of everything we do.",
     },
   ];
@@ -302,7 +302,7 @@ const AboutPage = () => {
               {/* Circle Image Container */}
               <div className="relative w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-xl z-10">
                 <img
-                  src="../../src/assets/images/products/night5.jpg"
+                  src="/images/products/night5.jpg"
                   alt="Our Story"
                   className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
                 />

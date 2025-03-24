@@ -220,21 +220,25 @@ const DreamWearHomepage = () => {
 
   const categories: Category[] = [
     {
+      id: 1,
       name: "Women's Nightwear",
       image: "/images/night5.jpg",
       count: 42,
     },
     {
+      id: 2,
       name: "Women's Gymwear",
       image: "/images/night6.jpg",
       count: 36,
     },
     {
+      id: 3,
       name: "Children's Clothing",
       image: "/images/13189.jpg",
       count: 28,
     },
     {
+      id: 4,
       name: "Sale Items",
       image: "/images/31427.jpg",
       count: 64,
@@ -344,7 +348,7 @@ const DreamWearHomepage = () => {
     navigate(`/category/${categoryName.toLowerCase().replace(/\s+/g, "-")}`);
   };
 
-  const handleNewsletterSubmit = (e) => {
+  const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (newsletterEmail) {
       toast.success("Thank you for subscribing!", {

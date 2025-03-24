@@ -15,7 +15,7 @@ import Deals from "./pages/Deals";
 import Categories from "./pages/Categories";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingProvider from "./components/LoadingProvider";
-import Lookbook from "./pages/LookBook";
+import LookBook from "./pages/LookBook";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -34,7 +34,7 @@ function AnimatedRoutes() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/deals" element={<Deals />} />
-        <Route path="/lookbook" element={<Lookbook />} />
+        <Route path="/lookbook" element={<LookBook />} />
       </Routes>
     </AnimatePresence>
   );

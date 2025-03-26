@@ -126,6 +126,7 @@ export default function Categories() {
                   <img
                     src={category.image}
                     alt={category.name}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300" />

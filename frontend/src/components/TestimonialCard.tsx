@@ -2,6 +2,7 @@ import { Testimonial } from '../types';
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
+  index?: number;
 }
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {

@@ -6,6 +6,7 @@ interface ProductCardProps {
   product: Product;
   onAddToCart?: (product: Product) => void;
   onAddToWishlist?: (product: Product) => void;
+  index?: number;
 }
 
 export default function ProductCard({ product, onAddToCart, onAddToWishlist }: ProductCardProps) {
@@ -19,6 +20,7 @@ export default function ProductCard({ product, onAddToCart, onAddToWishlist }: P
           <img
             src={product.image}
             alt={product.name}
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
